@@ -1,0 +1,13 @@
+# Environments
+venv/
+env/
+__pycache__/
+
+# Secrets
+.env
+
+# Local Databases
+faiss_index/
+
+# OS generated files
+.DS_Store
