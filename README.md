@@ -10,7 +10,7 @@ DocuMind AI is a full-stack Retrieval-Augmented Generation (RAG) application des
 ---
 
 ## 🚀 Live Demo
-**[Try DocuMind AI Here] (Insert your Streamlit share link here later)**
+**[Try DocuMind AI Here] (https://shivam3.streamlit.app/)**
 
 ---
 
