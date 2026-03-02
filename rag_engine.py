@@ -1,4 +1,5 @@
 import os
+import streamlit as st
 from PyPDF2 import PdfReader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -10,7 +11,14 @@ from dotenv import load_dotenv
 
 # Load environment variables (API Keys)
 load_dotenv()
-os.environ["GOOGLE_API_KEY"] = os.getenv("GOOGLE_API_KEY")
+api_key = os.getenv("GOOGLE_API_KEY")
+if not api_key:
+    try:
+        api_key = st.secrets["GOOGLE_API_KEY"]
+    except Exception:
+        api_key = None
+if api_key:
+    os.environ["GOOGLE_API_KEY"] = api_key
 
 def get_pdf_text(pdf_docs):
     """Extracts text from a list of uploaded PDF documents."""
